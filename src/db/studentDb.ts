@@ -11,6 +11,7 @@ const studentRepository = AppDataSource.getRepository(Student);
  */
 export const getStudentsDb = async (): Promise<StudentInterface[]> => {
   const students = await studentRepository.find({ relations: ['group'] });
+  // const students = await studentRepository.find();
   return students as StudentInterface[];
 };
 
